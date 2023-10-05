@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-from sys import argv
-a = len(argv)
-b = a - 1
-if a == 1:
-    print(f"0 arguments.")
-elif a == 2:
-    print(f"{b} argument:")
-    print(f"{b}: {argv[b]}")
-elif a > 2:
-    print(f"{b} arguments:")
-    for i in range(1, a):
-        print(f"{i}: {argv[i]}")
+
+if __name__ == "__main__":
+    """Print the sum, difference, multiple and quotient of 10 and 5."""
+    from calculator_1 import add, sub, mul, div
+
+    a = 10
+    b = 5
+
+    print("{} + {} = {}".format(a, b, add(a, b)))
+    print("{} - {} = {}".format(a, b, sub(a, b)))
+    print("{} * {} = {}".format(a, b, mul(a, b)))
+    print("{} / {} = {}".format(a, b, div(a, b)))
