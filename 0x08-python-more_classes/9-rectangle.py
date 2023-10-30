@@ -103,3 +103,8 @@ class Rectangle:
         """Print a message for every deletion of a Rectangle."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
+    
+    @classmethod
+    def square(cls, size=0):
+        """this turns recct into square"""
+        return cls(size, size)
