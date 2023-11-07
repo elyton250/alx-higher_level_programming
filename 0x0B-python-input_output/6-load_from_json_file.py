@@ -7,5 +7,4 @@ import json
 def load_from_json_file(filename):
     """this function reads from a file"""
     with open(filename, 'r', encoding='utf-8') as j_file:
-        json_str = j_file.read()
-        return json.load(json_str)
+        return json.load(j_file)
