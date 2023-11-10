@@ -82,9 +82,12 @@ class Rectangle(Base):
 
     def __str__(self):
         """thi prints the string"""
-        return f"[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                                                        self.x, self.y,self.width, 
-                                                     self.height)
+        w = self.width
+        h = self.height
+        x = self.x
+        y = self.y
+        idd = self.id
+        return f"[Rectangle] ({idd}) {x}/{y} - {w}/{h}"
 
     def update(self, *args, **kwargs):
         """this method updates the rectangle"""
@@ -93,6 +96,6 @@ class Rectangle(Base):
             for i in range(len(args)):
                 setattr(self, attributes[i], args[i])
         else:
-           for key, value in kwargs.items():
+            for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
