@@ -1,6 +1,6 @@
 #!/usr/bin/pyhton3
 """This module defines the class Rectangle."""
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -99,3 +99,12 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns a dict representation of a rectangle"""
+        w = self.width
+        h = self.height
+        x = self.x
+        y = self.y
+        idd = self.id
+        return {'id': idd, 'width': w, 'height': h, 'x': x, 'y': y}
