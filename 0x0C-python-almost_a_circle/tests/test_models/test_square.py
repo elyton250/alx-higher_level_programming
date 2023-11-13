@@ -52,6 +52,33 @@ class TestSquare(unittest.TestCase):
         """Test the area method."""
         self.assertEqual(self.square1.area(), 25)
         self.assertEqual(self.square2.area(), 9)
-        
+
+    """def test_invalid_size(self):
+        it tests the valuei of size
+        with self.assertRaises(ValueError):
+            s = Square(-5, 2, 3)
+
+    def test_invalid_position(self):
+        test the positon of the square
+        with self.assertRaises(ValueError, msg="x must be >= 0"):
+            s = Square(5, -2, 3)
+        with self.assertRaises(ValueError, msg="y must be >= 0"):
+            s = Square(5, 2, -3)"""
+
+    def test_area_small_square(self):
+        """tests the area of when the square is small"""
+        self.assertEqual(self.square1.area(), 25)
+
+    def test_area_large_square(self):
+        """ tets the area when the square is big"""
+        big_square = Square(100)
+        self.assertEqual(big_square.area(), 10000)
+
+    def test_private_attributes(self):
+        """test if attributes are private"""
+        with self.assertRaises(AttributeError):
+            print(self.square1.__width)
+            s = Square(-5)
+
 if __name__ == '__main__':
     unittest.main()
