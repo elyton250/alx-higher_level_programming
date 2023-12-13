@@ -1,1 +1,2 @@
-/*this shows the list of databases*/SHOW DATABASES;
+-- this shows the list of databases
+SHOW DATABASES;
