@@ -1,9 +1,11 @@
 #!/usr/bin/node
 // This class defines a rectangle
 class Rectangle {
-  constructor (w, h) {
-    this.width = w;
-    this.height = h;
+  cconstructor (w, h) {
+    if (typeof w === 'number' && w > 0 && typeof h === 'number' && h > 0) {
+      this.width = w;
+      this.height = h;
+    }
   }
 
   print () {

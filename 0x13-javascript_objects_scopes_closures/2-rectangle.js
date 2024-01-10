@@ -2,11 +2,10 @@
 // this function define a rectangle
 class Rectangle {
   constructor (w, h) {
-    if (w <= 0 || h <= 0) {
-      return {};
+    if (typeof w === 'number' && w > 0 && typeof h === 'number' && h > 0) {
+      this.width = w;
+      this.height = h;
     }
-    this.width = w;
-    this.height = h;
   }
 }
 module.exports = Rectangle;
