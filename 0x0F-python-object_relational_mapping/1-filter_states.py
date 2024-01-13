@@ -12,7 +12,7 @@ if __name__ == "__main__":
             db=sys.argv[3],
             port=3306)
         cur = db.cursor()
-        cur.execute("SELECT * FROM states ORDER BY states.id")
+        cur.execute("SELECT * FROM states ORDER BY id")
         rows = cur.fetchall()
         for row in rows:
             if row[1].startswith('N'):
