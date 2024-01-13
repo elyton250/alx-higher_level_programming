@@ -18,7 +18,7 @@ if __name__ == "__main__":
         pss_state = state[:i]
         cur = db.cursor()
         cur.execute(
-            "SELECT * FROM states WHERE name=%s"
+            "SELECT * FROM states WHERE name=\%s"
             "ORDER BY id", (pss_state,))
         rows = cur.fetchall()
         for row in rows:
