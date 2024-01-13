@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""this connect to adata base and aexecute sql queries"""
 import MySQLdb
 import sys
 
