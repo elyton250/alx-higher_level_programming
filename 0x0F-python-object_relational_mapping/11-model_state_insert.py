@@ -16,10 +16,10 @@ connection = f'mysql+mysqldb://{username}:{password}@{host}:3306/{database}'
 engine = create_engine(connection)
 
 Session = sessionmaker(bind=engine)
-session2 = Session()
 
-state = session2.query(State).order_by(State.id.asc()).first()
-if state:
-    print(f"{state.id}: {state.name}")
-else:
-    print("Nothing")
+session5 = Session()
+
+new_state = State(name='Louisiana')
+session5.add(new_state)
+session5.commit()
+session5.close()
