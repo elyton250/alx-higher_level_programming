@@ -29,4 +29,3 @@ if __name__ == "__main__":
         print("State not found.")
     else:
         print(f"{found_state.id}: {found_state.name}")
-        
