@@ -23,9 +23,10 @@ if __name__ == "__main__":
     session3 = Session()
 
     found_state = session3.query(State)\
-        .filter(State.name == state_to_find).order_by(State.id.asc()).first()
+        .filter(State.name == state_to_find).first()
 
-    if found_state:
-        print(f"{found_state.id}: {found_state.name}")
-    else:
+    if found_state is None:
         print("State not found.")
+    else:
+        print(f"{found_state.id}: {found_state.name}")
+        
