@@ -14,7 +14,8 @@ if __name__ == "__main__":
     password = argv[2]
     database = argv[3]
     host = "localhost"
-    connection = f'mysql+mysqldb://{username}:{password}@{host}:3306/{database}'
+    connection = f'mysql+mysqldb://{username}:\
+        {password}@{host}:3306/{database}'
 
     engine = create_engine(connection)
 
@@ -23,4 +24,4 @@ if __name__ == "__main__":
 
     states = session1.query(State).order_by(State.id.asc()).all()
     for state in states:
-        print(state.id, state.name)
+        print(f"{state.id}: {state.name}")
