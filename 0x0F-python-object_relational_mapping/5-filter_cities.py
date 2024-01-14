@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
-a script that takes in an argument and displays
-all values in the states table of hbtn_0e_0_usa
-where name matches the argument
+a script that lists all cities from the database hbtn_0e_4_usa
 """
 import MySQLdb
 import sys
@@ -17,13 +15,15 @@ if __name__ == "__main__":
                 port=3306
                 )
         cur = db.cursor()
-        cur.execute("SELECT a.id AS id, a.name AS name, b.name AS name "
-                    "FROM cities a "
-                    "INNER JOIN states b ON a.state_id = b.id "
-                    "ORDER BY a.id ASC")
+        cur.execute("SELECT * FROM cities WHERE cities.state_id = "
+                    "(SELECT id FROM states WHERE name = "
+                    "\'{}\')".format(sys.argv[4]))
         rows = cur.fetchall()
         for row in rows:
-            print(row)
+            print(row[2], end='')
+            if row != rows[len(rows) - 1]:
+                print(', ', end='')
+        print()
     except MySQLdb.Error as e:
         try:
             print("MySQL Error: [%d] - [%s]" % (e.args[0], e.args[1]))
