@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """This module uses SQLAlchemy."""
-from sqlalchemy import Column, Integer, String, create_engine, MetaData
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.orm import declarative_base
 
 mymetadata = MetaData()

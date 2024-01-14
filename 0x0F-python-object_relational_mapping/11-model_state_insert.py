@@ -7,19 +7,22 @@ from sqlalchemy.orm import sessionmaker
 from sys import argv
 from model_state import Base, State
 
-username = argv[1]
-password = argv[2]
-database = argv[3]
-host = "localhost"
-connection = f'mysql+mysqldb://{username}:{password}@{host}:3306/{database}'
+if __name__ == "__main__":
+    """this is makes main"""
 
-engine = create_engine(connection)
+    username = argv[1]
+    password = argv[2]
+    database = argv[3]
+    host = "localhost"
+    connection = f'mysql+mysqldb://{username}:{password}@{host}:3306/{database}'
 
-Session = sessionmaker(bind=engine)
+    engine = create_engine(connection)
 
-session5 = Session()
+    Session = sessionmaker(bind=engine)
 
-new_state = State(name='Louisiana')
-session5.add(new_state)
-session5.commit()
-session5.close()
+    session5 = Session()
+
+    new_state = State(name='Louisiana')
+    session5.add(new_state)
+    session5.commit()
+    session5.close()
