@@ -26,6 +26,6 @@ if __name__ == "__main__":
         .filter(State.name == state_to_find).first()
 
     if found_state is None:
-        print("State not found.")
+        print("Not found.")
     else:
         print(f"{found_state.id}")
