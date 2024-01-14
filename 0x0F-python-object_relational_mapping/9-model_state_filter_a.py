@@ -13,7 +13,8 @@ if __name__ == "__main__":
     database = argv[3]
     host = 'localhost'
     port = 3306
-    connection = f'mysql+mysqldb://{username}:{password}@{host}:{port}/{database}'
+    connection = f'mysql+mysqldb://{username}:\
+        {password}@{host}:{port}/{database}'
 
     engine = create_engine(connection)
 
