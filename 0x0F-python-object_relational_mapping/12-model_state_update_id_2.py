@@ -22,9 +22,8 @@ if __name__ == "__main__":
 
     session6 = Session()
 
-    to_up = session6.query(State).filter_by(id=2)
+    to_up = session6.query(State).filter_by(id=2).first()
 
     if to_up:
-        if to_up.id == 2:
-            to_up.name = 'New Mexico'
+        to_up.name = 'New Mexico'
     session6.commit()
