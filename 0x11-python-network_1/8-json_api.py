@@ -1,22 +1,19 @@
-"""This script sends a POST request to http://0.0.0.0:5000/search_user"""
-import requests
+#!/usr/bin/python3
+"""thiis sends req"""
 import sys
+import requests
+
 
 if __name__ == "__main__":
-    url = 'http://0.0.0.0:5000/search_user'
-    q = sys.argv[1] if len(sys.argv) > 1 else ""
+    letter = "" if len(sys.argv) == 1 else sys.argv[1]
+    payload = {"q": letter}
 
-    data = {'q': q}
-
-    response = requests.post(url, data=data)
-
+    r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
     try:
-        json_response = response.json()
-
-        if json_response:
-            print("[{}] {}".format(json_response['id'], json_response['name']))
-        else:
+        response = r.json()
+        if response == {}:
             print("No result")
-
+        else:
+            print("[{}] {}".format(response.get("id"), response.get("name")))
     except ValueError:
         print("Not a valid JSON")
