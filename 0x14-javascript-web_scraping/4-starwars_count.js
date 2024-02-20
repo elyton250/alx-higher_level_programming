@@ -10,7 +10,7 @@ if (process.argv.length !== 3) {
 
 const url = process.argv[2];
 // create the function to get the character from the people api
-const character = 'https://swapi-api.alx-tools.com/api/people/18/';
+// const character = 'https://swapi-api.alx-tools.com/api/people/18/';
 
 request(url, (error, response, body) => {
   if (error) {
@@ -34,7 +34,7 @@ request(url, (error, response, body) => {
   for (let i = 0; i < content.results.length; i++) {
     for (let j = 0; j < content.results[i].characters.length; j++) {
       // console.log(`checking: ${content.results[i].characters[j]} against ${character}`);
-      if (content.results[i].characters[j] === character) {
+      if (content.results[i].characters[j].includes('18')) {
         count++;
       }
     }
