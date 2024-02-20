@@ -9,6 +9,7 @@ if (process.argv.length !== 3) {
 }
 
 const url = process.argv[2];
+// create the function to get the character from the people api
 const character = 'https://swapi-api.alx-tools.com/api/people/18/';
 
 request(url, (error, response, body) => {
