@@ -8,8 +8,8 @@ req.get(url + id, function (error, res, body) {
     console.log(error);
   }
   const data = JSON.parse(body);
-  const dd = data.characters;
-  for (const i of dd) {
+  const char = data.characters;
+  for (const i of char) {
     req.get(i, function (error, res, body1) {
       if (error) {
         console.log(error);
