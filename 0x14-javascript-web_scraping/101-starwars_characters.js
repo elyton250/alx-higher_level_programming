@@ -9,7 +9,7 @@ request(url, function (err, res, body) {
   }
 });
 
-function printChars(characters, index) {
+function printChars (characters, index) {
   request(characters[index], function (err, res, body) {
     if (!err) {
       console.log(JSON.parse(body).name);
