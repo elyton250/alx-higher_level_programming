@@ -1,0 +1,1 @@
+this is th directory of jquery
